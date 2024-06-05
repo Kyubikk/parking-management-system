@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo8.ParkingControllerEMP">
+    <children>
+        <Pane prefHeight="500.0" prefWidth="180.0" style="-fx-background-color: #663399;">
+            <children>
+                <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="74.0" layoutY="76.0" size="40" />
+                <Text fx:id="txtHello" fill="WHITE" layoutX="44.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello Manager!">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Button layoutX="-2.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#parkingClick" prefHeight="26.0" prefWidth="187.0" text="Parking Management">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="CAR" size="13" />
+                    </graphic>
+                </Button>
+                <Button layoutX="46.0" layoutY="428.0" mnemonicParsing="false" onMouseClicked="#logoutClick" text="LOG OUT">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="SIGN_OUT" />
+                    </graphic>
+                </Button>
+            </children>
+        </Pane>
+        <AnchorPane layoutX="193.0" layoutY="9.0" prefHeight="267.0" prefWidth="688.0" style="-fx-background-color: #663399; -fx-background-radius: 8px;">
+            <children>
+                <TableView fx:id="tbParking" layoutX="14.0" layoutY="40.0" onMouseClicked="#tbViewClick" prefHeight="210.0" prefWidth="601.0">
+                    <columns>
+                        <TableColumn prefWidth="75.0" text="C1" />
+                        <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                </TableView>
+                <TextField fx:id="txtSearch" layoutX="14.0" layoutY="9.0" onKeyPressed="#searchClick2" prefHeight="1.0" prefWidth="290.0" promptText="Search">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </TextField>
+                <FontAwesomeIcon fill="#bcbcbc" glyphName="SEARCH" layoutX="284.0" layoutY="24.0" onMouseClicked="#searchClick" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="193.0" layoutY="280.0" prefHeight="210.0" prefWidth="688.0" style="-fx-background-color: #663399; -fx-background-radius: 8px;">
+            <children>
+                <TextField fx:id="txtPlate" layoutX="263.0" layoutY="23.0">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </TextField>
+                <ComboBox fx:id="cboType" layoutX="262.0" layoutY="60.0" prefHeight="13.0" prefWidth="150.0" promptText="choose" />
+                <Button layoutX="501.0" layoutY="163.0" mnemonicParsing="false" onMouseClicked="#addClick" prefHeight="26.0" prefWidth="71.0" text="Add" />
+                <Button layoutX="588.0" layoutY="163.0" mnemonicParsing="false" onMouseClicked="#releaseClick" prefHeight="26.0" prefWidth="71.0" text="Release" />
+                <Button layoutX="412.0" layoutY="163.0" mnemonicParsing="false" onMouseClicked="#clearClick" prefHeight="26.0" prefWidth="71.0" text="Clear" />
+                <Text fill="WHITE" layoutX="194.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Plate #:" textAlignment="RIGHT">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="204.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type:" textAlignment="RIGHT">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <FontAwesomeIcon fill="WHITE" glyphName="CAR" layoutX="25.0" layoutY="98.0" size="30" tabSize="0" />
+                <Text fx:id="car_left" fill="WHITE" layoutX="87.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <FontAwesomeIcon fill="WHITE" glyphName="MOTORCYCLE" layoutX="25.0" layoutY="178.0" size="30" tabSize="0" />
+                <Text fx:id="bike_left" fill="WHITE" layoutX="87.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="25.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Available slots:">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <AnchorPane layoutX="463.0" layoutY="16.0" prefHeight="129.0" prefWidth="141.0" style="-fx-background-color: WHITE; -fx-background-radius: 8px;">
+                    <children>
+                        <ImageView fx:id="img" fitHeight="129.0" fitWidth="141.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button layoutX="-3.0" layoutY="103.0" mnemonicParsing="false" onMouseClicked="#uploadImage" prefHeight="26.0" prefWidth="148.0" text="Upload Image" />
+                    </children>
+                </AnchorPane>
+                <Button layoutX="165.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#getTicket" prefHeight="26.0" prefWidth="87.0" text="DailyTicket" />
+                <Text fx:id="textTicket" fill="WHITE" layoutX="263.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="178.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Ticket" textAlignment="RIGHT" wrappingWidth="62.17138671875">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <TextField fx:id="monthyTicket" layoutX="263.0" layoutY="102.0">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </TextField>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

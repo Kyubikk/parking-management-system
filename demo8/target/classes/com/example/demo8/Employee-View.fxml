@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo8.EmployeeController">
+    <children>
+        <Pane prefHeight="500.0" prefWidth="180.0" style="-fx-background-color: #663399;">
+            <children>
+                <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="74.0" layoutY="76.0" size="40" />
+                <Text fx:id="txtHello" fill="WHITE" layoutX="44.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello Manager!">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Button layoutY="156.0" mnemonicParsing="false" onMouseClicked="#homeClick" prefHeight="26.0" prefWidth="187.0" text="Home">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="HOME" size="13" />
+                    </graphic>
+                </Button>
+                <Button layoutX="-2.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#parkingClick" prefHeight="26.0" prefWidth="187.0" text="Parking Management">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="CAR" size="13" />
+                    </graphic>
+                </Button>
+                <Button layoutY="199.0" mnemonicParsing="false" onMouseClicked="#empClick" prefHeight="26.0" prefWidth="187.0" text="Employee Management">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="USERS" size="13" />
+                    </graphic>
+                </Button>
+                <Button layoutX="46.0" layoutY="428.0" mnemonicParsing="false" onMouseClicked="#logoutClick" text="LOG OUT">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="SIGN_OUT" />
+                    </graphic>
+                </Button>
+            </children>
+        </Pane>
+        <AnchorPane layoutX="193.0" layoutY="9.0" prefHeight="267.0" prefWidth="688.0" style="-fx-background-color: #663399; -fx-background-radius: 8px;">
+            <children>
+                <TableView fx:id="tbEmployee" layoutX="14.0" layoutY="40.0" onMouseClicked="#tbViewClick" prefHeight="210.0" prefWidth="656.0">
+                    <columns>
+                        <TableColumn prefWidth="75.0" text="C1" />
+                        <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                </TableView>
+                <TextField fx:id="txtSearch" layoutX="14.0" layoutY="9.0" onKeyPressed="#searchClick2" prefHeight="1.0" prefWidth="290.0" promptText="Search by ID or Name">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </TextField>
+                <FontAwesomeIcon fill="#bcbcbc" glyphName="SEARCH" layoutX="284.0" layoutY="24.0" onMouseClicked="#searchClick" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="193.0" layoutY="279.0" prefHeight="210.0" prefWidth="688.0" style="-fx-background-color: #663399; -fx-background-radius: 8px;">
+            <children>
+                <VBox alignment="TOP_RIGHT" layoutX="14.0" layoutY="9.0" prefHeight="152.0" prefWidth="78.0" spacing="14.0">
+                    <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee ID:" textAlignment="RIGHT">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender:">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </VBox>
+                <TextField fx:id="txtID" layoutX="104.0" layoutY="6.0">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="txtFname" layoutX="104.0" layoutY="41.0">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="txtLname" layoutX="104.0" layoutY="75.0">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="txtAddress" layoutX="104.0" layoutY="141.0">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </TextField>
+                <ComboBox fx:id="cboGender" layoutX="103.0" layoutY="108.0" prefHeight="13.0" prefWidth="150.0" promptText="choose" />
+                <Text fill="WHITE" layoutX="42.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone #:" textAlignment="RIGHT">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="287.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Position:">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="303.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shift:">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="267.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ManagerID:">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <TextField fx:id="txtPhone" layoutX="104.0" layoutY="174.0">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </TextField>
+                <ComboBox fx:id="cboPosition" layoutX="348.0" layoutY="9.0" prefHeight="13.0" prefWidth="150.0" promptText="choose" />
+                <ComboBox fx:id="cboShift" layoutX="348.0" layoutY="43.0" prefHeight="13.0" prefWidth="150.0" promptText="choose" />
+                <TextField fx:id="txtManagerID" layoutX="349.0" layoutY="79.0">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </TextField>
+                <AnchorPane layoutX="520.0" layoutY="8.0" prefHeight="129.0" prefWidth="141.0" style="-fx-background-color: WHITE; -fx-background-radius: 8px;">
+                    <children>
+                        <ImageView fx:id="img" fitHeight="129.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button layoutX="-3.0" layoutY="103.0" mnemonicParsing="false" onMouseClicked="#uploadImage" prefHeight="26.0" prefWidth="148.0" text="Upload Image" />
+                    </children>
+                </AnchorPane>
+                <Button layoutX="416.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#addClick" prefHeight="26.0" prefWidth="71.0" text="Add" />
+                <Button layoutX="593.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#deleteClick" prefHeight="26.0" prefWidth="71.0" text="Delete" />
+                <Button layoutX="508.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#updateClick" prefHeight="26.0" prefWidth="71.0" text="Update" />
+                <Button layoutX="331.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#clearClick" prefHeight="26.0" prefWidth="71.0" text="Clear" />
+                <Text fill="WHITE" layoutX="274.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <TextField fx:id="txtPass" layoutX="349.0" layoutY="112.0">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </TextField>
+            </children>
+        </AnchorPane>
+        <Button layoutX="-2.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#montlyTicketClick" prefHeight="26.0" prefWidth="187.0" text="Montly Ticket">
+            <graphic>
+                <FontAwesomeIcon glyphName="PLUS" size="13" text="" />
+            </graphic>
+        </Button>
+        <Button layoutX="-1.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#historyClick" prefHeight="26.0" prefWidth="187.0" text="Parking History">
+            <graphic>
+                <FontAwesomeIcon glyphName="DATABASE" />
+            </graphic>
+        </Button>
+    </children>
+</AnchorPane>

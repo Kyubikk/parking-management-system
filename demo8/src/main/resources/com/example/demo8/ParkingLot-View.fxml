@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo8.LotController">
+    <children>
+        <Pane prefHeight="500.0" prefWidth="180.0" style="-fx-background-color: #663399;">
+            <children>
+                <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="74.0" layoutY="76.0" size="40" />
+                <Text fx:id="txtHello" fill="WHITE" layoutX="44.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello Manager!">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Button layoutY="156.0" mnemonicParsing="false" onMouseClicked="#homeClick" prefHeight="26.0" prefWidth="187.0" text="Home">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="HOME" size="13" />
+                    </graphic>
+                </Button>
+                <Button layoutX="-2.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#parkingClick" prefHeight="26.0" prefWidth="187.0" text="Parking Management">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="CAR" size="13" />
+                    </graphic>
+                </Button>
+                <Button layoutY="199.0" mnemonicParsing="false" onMouseClicked="#empClick" prefHeight="26.0" prefWidth="187.0" text="Employee Management">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="USERS" size="13" />
+                    </graphic>
+                </Button>
+                <Button layoutX="46.0" layoutY="428.0" mnemonicParsing="false" onMouseClicked="#logoutClick" text="LOG OUT">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="SIGN_OUT" />
+                    </graphic>
+                </Button>
+            </children>
+        </Pane>
+        <Pane layoutX="206.0" layoutY="22.0" prefHeight="215.0" prefWidth="673.0" style="-fx-background-color: #663399; -fx-background-radius: 8px;">
+            <children>
+                <Text fill="WHITE" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Parking Spot">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Button layoutX="42.0" layoutY="54.0" mnemonicParsing="false">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="CAR" text="" />
+                    </graphic>
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+                <Text fx:id="carSlot_num" fill="WHITE" layoutX="108.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Button layoutX="349.0" layoutY="51.0" mnemonicParsing="false">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon glyphName="MOTORCYCLE" />
+                    </graphic>
+                </Button>
+                <Text fx:id="bikeSlot_num" fill="WHITE" layoutX="416.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <TextField fx:id="textField_CarSlot" layoutX="108.0" layoutY="140.0" />
+                <Button layoutX="42.0" layoutY="140.0" mnemonicParsing="false" onMouseClicked="#carSlotChange" text="Change" />
+                <TextField fx:id="textField_BikeSlot" layoutX="415.0" layoutY="138.0" />
+                <Button layoutX="349.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#bikeSlotChange" text="Change" />
+            </children>
+        </Pane>
+        <Pane layoutX="203.0" layoutY="257.0" prefHeight="215.0" prefWidth="453.0" style="-fx-background-color: #663399; -fx-background-radius: 8px;">
+            <children>
+                <Text fill="WHITE" layoutX="14.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parking Fee VND (per hour)">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <FontAwesomeIcon fill="WHITE" glyphName="MONEY" layoutX="192.0" layoutY="30.0" size="15" wrappingWidth="13.928571701049805" />
+                <Button layoutX="45.0" layoutY="41.0" mnemonicParsing="false">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="CAR" text="" />
+                    </graphic>
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+                <Text fx:id="carFee" fill="WHITE" layoutX="109.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Button layoutX="241.0" layoutY="41.0" mnemonicParsing="false">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <graphic>
+                        <FontAwesomeIcon glyphName="MOTORCYCLE" />
+                    </graphic>
+                </Button>
+                <Text fx:id="bikeFee" fill="WHITE" layoutX="325.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <TextField fx:id="textField_CarFee" layoutX="102.0" layoutY="135.0" prefHeight="26.0" prefWidth="111.0" />
+                <Button layoutX="36.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#carFeeChange" text="Change" />
+                <TextField fx:id="textField_BikeFee" layoutX="305.0" layoutY="135.0" prefHeight="26.0" prefWidth="111.0" />
+                <Button layoutX="237.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#bikeFeeChange" text="Change" />
+            </children>
+        </Pane>
+        <Button layoutX="-2.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#montlyTicketClick" prefHeight="26.0" prefWidth="187.0" text="Montly Ticket">
+            <graphic>
+                <FontAwesomeIcon glyphName="PLUS" size="13" text="" />
+            </graphic>
+        </Button>
+        <Button layoutX="-1.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#historyClick" prefHeight="26.0" prefWidth="187.0" text="Parking History">
+            <graphic>
+                <FontAwesomeIcon glyphName="DATABASE" />
+            </graphic>
+        </Button>
+        <Pane layoutX="666.0" layoutY="257.0" prefHeight="215.0" prefWidth="214.0" style="-fx-background-color: #663399; -fx-background-radius: 8px;">
+            <children>
+                <Text fill="WHITE" layoutX="14.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Additional Fee">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Button layoutX="14.0" layoutY="41.0" mnemonicParsing="false">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="PLUS" />
+                    </graphic>
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+                <Text fx:id="carFee1" fill="WHITE" layoutX="109.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Text fx:id="bikeFee1" fill="WHITE" layoutX="422.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <TextField fx:id="textField_AddFee" layoutX="82.0" layoutY="138.0" prefHeight="26.0" prefWidth="111.0" />
+                <Button layoutX="14.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#addFeeChange" text="Change" />
+                <Text fx:id="addFee" fill="WHITE" layoutX="70.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

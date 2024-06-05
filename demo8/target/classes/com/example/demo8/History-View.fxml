@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo8.historyController">
+    <children>
+        <Pane prefHeight="500.0" prefWidth="180.0" style="-fx-background-color: #663399;">
+            <children>
+                <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="74.0" layoutY="76.0" size="40" />
+                <Text fx:id="txtHello" fill="WHITE" layoutX="44.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello Manager!">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Button layoutX="-2.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#parkingClick" prefHeight="26.0" prefWidth="187.0" text="Parking Management">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="CAR" size="13" />
+                    </graphic>
+                </Button>
+                <Button layoutX="46.0" layoutY="428.0" mnemonicParsing="false" onMouseClicked="#logoutClick" text="LOG OUT">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="SIGN_OUT" />
+                    </graphic>
+                </Button>
+                <Button layoutY="199.0" mnemonicParsing="false" onMouseClicked="#empClick" prefHeight="26.0" prefWidth="187.0" text="Employee Management">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="USERS" size="13" />
+                    </graphic>
+                </Button>
+                <Button layoutX="-1.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#historyClick" prefHeight="26.0" prefWidth="187.0" text="Parking History">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="DATABASE" />
+                    </graphic>
+                </Button>
+            </children>
+        </Pane>
+        <AnchorPane layoutX="193.0" layoutY="9.0" prefHeight="481.0" prefWidth="688.0" style="-fx-background-color: #663399; -fx-background-radius: 8px;">
+            <children>
+                <TableView fx:id="tbHistory" layoutX="14.0" layoutY="40.0" prefHeight="326.0" prefWidth="515.0">
+                    <columns>
+                        <TableColumn prefWidth="75.0" text="C1" />
+                        <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                </TableView>
+                <TextField fx:id="txtSearch" layoutX="14.0" layoutY="9.0" onKeyPressed="#searchClick2" prefHeight="1.0" prefWidth="290.0" promptText="Search">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </TextField>
+                <FontAwesomeIcon fill="#bcbcbc" glyphName="SEARCH" layoutX="284.0" layoutY="24.0" onMouseClicked="#searchClick" />
+                <Text fill="WHITE" layoutX="14.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL PARKED VEHICLE:" />
+                <FontAwesomeIcon fill="WHITE" glyphName="CAR" layoutX="14.0" layoutY="448.0" size="30" tabSize="30" />
+                <FontAwesomeIcon fill="WHITE" glyphName="MOTORCYCLE" layoutX="177.0" layoutY="449.0" size="30" tabSize="30" />
+                <Text fx:id="parkedCar" fill="WHITE" layoutX="71.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Text fx:id="parkedBike" fill="WHITE" layoutX="234.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="315.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DAY:" />
+                <Text fill="WHITE" layoutX="316.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MONTH:" />
+                <Text fill="WHITE" layoutX="314.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="YEAR:" />
+                <TextField fx:id="inputDay" layoutX="384.0" layoutY="378.0">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="inputMonth" layoutX="384.0" layoutY="408.0">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="inputYear" layoutX="384.0" layoutY="439.0">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </TextField>
+                <Button layoutX="557.0" layoutY="388.0" mnemonicParsing="false" onMouseClicked="#findClick" prefHeight="26.0" prefWidth="58.0" text="Find" />
+                <Button layoutX="557.0" layoutY="424.0" mnemonicParsing="false" onMouseClicked="#okClick" prefHeight="26.0" prefWidth="58.0" text="OK" />
+            <Text fill="WHITE" layoutX="544.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MONTHLY REVENUE" />
+            <Text fx:id="txtRevenue" fill="WHITE" layoutX="544.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            </children>
+        </AnchorPane>
+        <Button layoutY="156.0" mnemonicParsing="false" onMouseClicked="#homeClick" prefHeight="26.0" prefWidth="187.0" text="Home">
+            <graphic>
+                <FontAwesomeIcon glyphName="HOME" size="13" />
+            </graphic>
+        </Button>
+        <Button layoutX="-2.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#montlyTicketClick" prefHeight="26.0" prefWidth="187.0" text="Monthly Ticket">
+            <graphic>
+                <FontAwesomeIcon glyphName="PLUS" size="13" text="" />
+            </graphic>
+        </Button>
+    </children>
+</AnchorPane>
