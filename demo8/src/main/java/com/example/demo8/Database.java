@@ -6,6 +6,6 @@ import java.sql.SQLException;
 
 public class Database {
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=pms3;user=sa;password=Linh0711;");
+        return DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=pms3;user=sa;password=*****;");
     }
 }
